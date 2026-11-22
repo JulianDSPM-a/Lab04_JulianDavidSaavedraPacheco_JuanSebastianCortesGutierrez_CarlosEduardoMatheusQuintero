@@ -8,7 +8,7 @@ Electrónica Digital II · Universidad Nacional de Colombia, sede Bogotá · 202
 | Juan Sebastián Cortés Gutiérrez | jcortesgu@unal.edu.co |
 | Carlos Eduardo Matheus Quintero | cmatheus@unal.edu.co |
 
-Se implementó un SoC en una **Zybo Z7-10** con Vivado 2026.1. Un núcleo ARM Cortex-A9 ejecuta una aplicación *standalone* compilada en Vitis 2026.1 que lee cuatro botones y controla cuatro LED a través de AXI GPIO. El diseño también incorpora una BRAM de 8 KiB accesible desde el procesador. La entrega contiene el diseño, los binarios, tres capturas y el [video original de la demostración física](evidencias/hardware/video-evidencia-lab04.mp4).
+Se implementó un SoC en una **Zybo Z7-10** con Vivado 2026.1. Un núcleo ARM Cortex-A9 ejecuta una aplicación *standalone* compilada en Vitis 2026.1 que lee cuatro botones y controla cuatro LED a través de AXI GPIO. El diseño también incorpora una BRAM de 8 KiB accesible desde el procesador. La entrega contiene el diseño, los binarios, tres capturas y el [video de la demostración física](evidencias/hardware/video-evidencia-lab04.mp4).
 
 ## Contenido
 
@@ -35,7 +35,7 @@ Un SoC reúne en un mismo circuito el procesador, las interfaces de memoria y ot
 
 ## 4.1 · Integración de la Zybo Z7-10
 
-Para instalar los *board files*, en Vivado se abre el catálogo de placas, se actualiza desde **Xilinx Board Store** y se instala la **Zybo Z7-10** de Digilent. Los archivos de placa proporcionan el preset del Zynq y las interfaces de los botones y los LED. El proyecto suministrado conserva `BoardPart = digilentinc.com:zybo-z7-10:part0:1.2` y `Part = xc7z010clg400-1`, lo que permite comprobar qué placa y qué dispositivo quedaron configurados. [Archivos de placa de Digilent](https://github.com/Digilent/vivado-boards) · [Proyecto Vivado](hardware/vivado/project_5.xpr)
+Para instalar los board files, en Vivado se abre el catálogo de placas, se actualiza desde **Xilinx Board Store** y se instala la **Zybo Z7-10** de Digilent. Los archivos de placa proporcionan el preset del Zynq y las interfaces de los botones y los LED. El proyecto suministrado conserva `BoardPart = digilentinc.com:zybo-z7-10:part0:1.2` y `Part = xc7z010clg400-1`, lo que permite comprobar qué placa y qué dispositivo quedaron configurados. [Archivos de placa de Digilent](https://github.com/Digilent/vivado-boards) · [Proyecto Vivado](hardware/vivado/project_5.xpr)
 
 ## 4.2 · Diseño e implementación en Vivado
 
@@ -74,7 +74,7 @@ El canal 1 quedó configurado como salida y el canal 2 como entrada. Los ocho pi
 
 8. Sobre el diseño de bloques se usa **Create HDL Wrapper → Let Vivado manage wrapper and auto-update**. El proyecto fija `my_first_diagram_wrapper` como módulo superior. El wrapper expone `DDR`, `FIXED_IO` y los buses de botones y LED. [Wrapper Verilog](hardware/vivado/project_5.gen/sources_1/bd/my_first_diagram/hdl/my_first_diagram_wrapper.v)
 9. En **Diagram**, **Run Block Automation** aplica el preset de placa, incluidas las interfaces `DDR` y `FIXED_IO` del PS. El diseño guardado conserva ambas conexiones y la configuración resultante del Zynq. [Block Design](hardware/vivado/project_5.srcs/sources_1/bd/my_first_diagram/my_first_diagram.bd)
-10. Se ejecuta **Generate Bitstream**. El registro conserva la finalización del enrutado y de `write_bitstream`. El DRC después del enrutado reportó cero infracciones. Los márgenes de las rutas analizadas fueron **WNS = 9,525 ns** y **WHS = 0,027 ns**, sin extremos fallidos de *setup* o *hold*. El informe identifica cuatro entradas y cuatro salidas GPIO sin retardos externos especificados. [Registro de generación](evidencias/vivado/generacion-bitstream.txt) · [DRC](evidencias/vivado/my_first_diagram_wrapper_drc_routed.rpt) · [Informe temporal](evidencias/vivado/my_first_diagram_wrapper_timing_summary_routed.rpt) · [Utilización](evidencias/vivado/my_first_diagram_wrapper_utilization_placed.rpt)
+10. Se ejecuta **Generate Bitstream**. El registro conserva la finalización del enrutado y de `write_bitstream`. Los márgenes de las rutas analizadas fueron **WNS = 9,525 ns** y **WHS = 0,027 ns**, sin extremos fallidos de *setup* o *hold*. El informe identifica cuatro entradas y cuatro salidas GPIO sin retardos externos especificados. [Registro de generación](evidencias/vivado/generacion-bitstream.txt) · [DRC](evidencias/vivado/my_first_diagram_wrapper_drc_routed.rpt) · [Informe temporal](evidencias/vivado/my_first_diagram_wrapper_timing_summary_routed.rpt) · [Utilización](evidencias/vivado/my_first_diagram_wrapper_utilization_placed.rpt)
 11. En **File → Export → Export Hardware**, se selecciona la exportación **Include bitstream**. El archivo `my_first_diagram_wrapper.xsa` lleva la descripción de hardware, la inicialización del PS y el bitstream. La copia del XSA importada a Vitis coincide con la exportación de Vivado, y el `.bit` dentro del XSA coincide con el usado para programar la PL. [XSA exportado](hardware/entrega/my_first_diagram_wrapper.xsa) · [Bitstream](hardware/entrega/my_first_diagram_wrapper.bit)
 
 ![Address Editor con las regiones de 8 KiB para la BRAM y de 4 KiB para el GPIO](evidencias/capturas/02-mapa-axi.png)
@@ -122,7 +122,7 @@ La validación solicitada consiste en dejar los botones libres para observar el 
 | [`evidencias/capturas/`](evidencias/capturas) | Tres capturas originales del diseño, mapa AXI y compilación. |
 | [`evidencias/vivado/`](evidencias/vivado) | Informes de pines, DRC, temporización, utilización y extracto de generación del bitstream. |
 | [`evidencias/vitis/`](evidencias/vitis) | Configuración de aplicación y lanzamiento, cabecera del BSP y extracto de ejecución JTAG. |
-| [`evidencias/hardware/`](evidencias/hardware) | MP4 original de la prueba en la placa. |
+| [`evidencias/hardware/`](evidencias/hardware) | Videoprueba.                 |
 
 ## Conclusiones
 
