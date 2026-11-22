@@ -1,0 +1,18 @@
+Extracto de _ide/logs/vitis.log (Vitis 2026.1)
+Se acortaron las rutas locales y se omitieron los identificadores del cable.
+
+14:42:21 ERROR : Timed out. 180 seconds have elapsed while waiting for XSDB server to launch.
+14:48:04 INFO  : XSDB server has started successfully from frontend.
+14:48:05 INFO  : Connection to XSDB Server established.
+14:48:05 INFO  : connect -url tcp:127.0.0.1:3121
+14:48:08 INFO  : System reset is completed.
+14:48:12 INFO  : Device configured successfully with "<workspace>/app_component/_ide/bitstream/my_first_diagram_wrapper.bit"
+14:48:13 INFO  : loadhw -hw <workspace>/platform/export/platform/hw/my_first_diagram_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+14:48:13 INFO  : configparams force-mem-access 1
+14:48:14 INFO  : ps7_init
+14:48:14 INFO  : ps7_post_config
+14:48:14 INFO  : targets -set -nocase -filter {name =~ "*A9*#0" && jtag_cable_name =~ "Digilent Zybo Z7 [serie omitida]" && jtag_device_ctx=="[identificador omitido]"}
+14:48:14 INFO  : rst -processor
+14:48:14 INFO  : dow <workspace>/app_component/build/app_component.elf
+14:48:14 INFO  : con
+14:48:14 INFO  : configparams force-mem-access 0

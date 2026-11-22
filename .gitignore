@@ -1,0 +1,12 @@
+/.Xil/
+*.jou
+*.log
+/hardware/vivado/.Xil/
+/hardware/vivado/project_5.cache/
+/hardware/vivado/project_5.hw/
+/hardware/vivado/project_5.ip_user_files/
+/hardware/vivado/project_5.runs/
+/hardware/vivado/project_5.sim/
+/hardware/vivado/project_5.gen/**/*
+!/hardware/vivado/project_5.gen/**/
+!/hardware/vivado/project_5.gen/sources_1/bd/my_first_diagram/hdl/my_first_diagram_wrapper.v

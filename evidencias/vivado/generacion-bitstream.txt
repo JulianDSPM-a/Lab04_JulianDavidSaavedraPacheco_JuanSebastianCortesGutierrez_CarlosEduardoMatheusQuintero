@@ -1,0 +1,7 @@
+Extracto de project_5.runs/impl_1/runme.log (Vivado 2026.1)
+
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+route_design completed successfully
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+write_bitstream completed successfully
